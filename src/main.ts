@@ -1,6 +1,7 @@
 import { NestFactory } from '@nestjs/core';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
-import { AppModule } from './example/app.module';
+import { Logger } from '@nestjs/common';
+import { AppModule } from './app.module';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -8,7 +9,6 @@ async function bootstrap() {
     .setTitle('AT-API')
     .setDescription('API for AT')
     .setVersion('1.0')
-    .addTag('AT')
     .build();
 
   const document = SwaggerModule.createDocument(app, config);
@@ -16,5 +16,7 @@ async function bootstrap() {
   SwaggerModule.setup('docs', app, document);
 
   await app.listen(3000);
+  Logger.log(`🚀 API service running on: ${await app.getUrl()}`);
+  Logger.log(`📚 API Swagger running on: ${await app.getUrl()}/docs`);
 }
 bootstrap();
