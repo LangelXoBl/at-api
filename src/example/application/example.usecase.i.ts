@@ -1,3 +1,4 @@
 export interface IExampleUseCase {
-  sayHello(name: string): string;
+  sayHello(): string;
+  createHello(name: string): string;
 }
