@@ -1,5 +1,8 @@
-import { User } from './user.entity';
+import { IUser } from './user.entity';
 
-export interface UserRepository {
-  save(user: User): Promise<void>;
+export interface IUserRepository {
+  save(user: IUser): Promise<IUser>;
+  findAll(): Promise<IUser[]>;
+  findById(id: string): Promise<IUser>;
+  findByEmail(email: string): Promise<IUser>;
 }

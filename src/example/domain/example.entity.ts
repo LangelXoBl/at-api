@@ -1,3 +1,3 @@
 export interface ExampleEntity {
-  name: string;
+  name?: string;
 }
