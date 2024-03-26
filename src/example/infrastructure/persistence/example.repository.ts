@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { IExampleRepository } from '../../domain/example.repository';
+import { IExampleRepository } from '@/example/domain/example.repository';
 
 @Injectable()
 export class ExampleRepository implements IExampleRepository {

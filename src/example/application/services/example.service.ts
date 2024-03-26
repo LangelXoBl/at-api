@@ -1,7 +1,7 @@
 import { Inject, Injectable } from '@nestjs/common';
-import { IExampleRepository } from '../../domain/example.repository';
 import { IExampleService } from './example.service.interface';
-import { ExampleRepository } from '../../infrastructure/persistence/example.repository';
+import { IExampleRepository } from '@/example/domain/example.repository';
+import { ExampleRepository } from '@/example/infrastructure/persistence/example.repository';
 
 @Injectable()
 export class ExampleService implements IExampleService {
