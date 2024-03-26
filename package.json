@@ -58,6 +58,7 @@
       "json",
       "ts"
     ],
+    "rootDir": "src",
     "testRegex": ".*\\.spec\\.ts$",
     "transform": {
       "^.+\\.(t|j)s$": "ts-jest"
@@ -69,6 +70,6 @@
     "testEnvironment": "node",
     "preset": "ts-jest",
     "moduleDirectories": [ "node_modules", "<rootDir>" ],
-    "moduleNameMapper": { "^@/(.*)$": "src/$1" }
+    "moduleNameMapper": { "^@/(.*)$": "$1" }
   }
 }
